@@ -48,7 +48,7 @@ namespace configReaderConsole
     }
 
     /// <summary>
-    /// This class is Data Mapper, when IConfigurationSectionHandler inherited class (GGCSettingsSectionHandler) 
+    /// This class is a Data Mapper, when IConfigurationSectionHandler inherited class (GGCSettingsSectionHandler) 
     /// reads the XML section then this class will be used to do data mapping from XML to C# class object
     /// 
     /// GGCSettings - name should match with config file <section name ="GGCSettings"
