@@ -12,6 +12,9 @@ using System.Net;
 
 namespace configReaderConsole
 {
+    /// <summary>
+    /// GGCSettings class property uses this class
+    /// </summary>
     public class IpAddresses
     {
         private string _IpAddress1;
@@ -44,6 +47,19 @@ namespace configReaderConsole
         }
     }
 
+    /// <summary>
+    /// This class is Data Mapper, when IConfigurationSectionHandler inherited class (GGCSettingsSectionHandler) 
+    /// reads the XML section then this class will be used to do data mapping from XML to C# class object
+    /// 
+    /// GGCSettings - name should match with config file <section name ="GGCSettings"
+    /// and it should match with the following sections also in app.Config file.
+    /// 
+    /// <!-- configReaderConsole.GGCSettings is namespace.classname, configReaderConsole is assembly name -->
+    /// <GGCSettings type ="configReaderConsole.GGCSettingsDataMapper , configReaderConsole">
+    /// 
+    /// If you happen to change the name of this class GGCSettings, 
+    /// then you need to change all the occurrences of GGCSettings in the app.Config too.
+    /// </summary>
     public class GGCSettings
     {
         private string _userId;
@@ -98,7 +114,17 @@ namespace configReaderConsole
         
     }
 
-
+    /// <summary>
+    /// By defining the following in app.Config file,
+    /// 
+    /// <configSections>       
+    /// <section name ="GGCSettings"
+    ///         type ="configReaderConsole.GGCSettingsSectionHandler, configReaderConsole"/>
+    /// </configSections>
+    /// When GetSection API called as follows
+    ///  System.Configuration.ConfigurationManager.GetSection("GGCSettings")  then GetSection API 
+    ///  knows, to call GGCSettingsSectionHandler to do the Data mapping / Deserialize from XML to Class object    /// 
+    /// </summary>
     public class GGCSettingsSectionHandler : IConfigurationSectionHandler
     {
         public object Create(object parent, object configContext, System.Xml.XmlNode section)
@@ -113,7 +139,9 @@ namespace configReaderConsole
     {
         static void Main(string[] args)
         {
+            // ggc class object will have the values read from GGCSettings XML inside app.config file
             GGCSettings ggc = (GGCSettings)System.Configuration.ConfigurationManager.GetSection("GGCSettings"); 
+            
         }
     }
 }
