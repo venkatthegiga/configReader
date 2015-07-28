@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("configReader")]
+[assembly: AssemblyTitle("configReaderConsole")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("configReader")]
+[assembly: AssemblyProduct("configReaderConsole")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7d649ef6-b4ba-4f9f-b32b-baca6a5bd8c6")]
+[assembly: Guid("6277971c-50af-4df9-b9c3-6982f6093d15")]
 
 // Version information for an assembly consists of the following four values:
 //
